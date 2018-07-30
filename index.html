@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#999999" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Unsharp Mask</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="slider.css" />
+    
+    <link rel="manifest" href="/manifest.json">
+  
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Unsharp Mask">
+    <link rel="apple-touch-icon" href="images/icons/icon-128x128.png">
+    <meta name="msapplication-TileImage" content="images/icons/icon-128x128.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+    
+</head>
+<body>
+    <header>
+            <div id="div1">
+                <div id="a1">
+                        <h1 class="header__title">Unsharp Mask</h1>
+                </div>
+                <div id="a2">
+                    
+                            <button id="butRefresh" class="headerButton" aria-label="Refresh"> </button>
+                            <button id="butAdd" class="headerButton" aria-label="Add"> </button> 
+                            <div id="a4" hidden>
+                                <a id="download" href="/images/download.png" download="w3logo" >
+                                    <img border="0" src="/images/down.png" alt="indirmek icin tıkla" width="32" height="32">
+                                    
+                                </a>     
+                                
+                           </div>
+                        
+                    
+                           <br> <div id="boxcontainer" style="font-size:12px">  <input id="box" type="checkbox" name="dev" value="acik" onclick="onClickHandler()"> Geliştirici Modu </div>
+               
+                    
+                 </div> 
+
+                
+
+
+                <div id="slidecontainer">
+                        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+                        <p id="katsayi"> Ağırlık: <span id="demo*">  </span></p> 
+                        <input type="range" min="0" max="2" value="2" class="slider" id="radiusslider">
+                        <p id="radiuskatsayi"> Yarıçap: <span id="demo**">  </span></p> 
+                        <input type="range" min="0" max="100" value="0" class="slider" id="thresholdslider">
+                        <p id="thresholdkatsayi"> Eşik Değeri: <span id="demo***">  </span></p> 
+                </div>   
+                   
+
+                <div id="a6" hidden>
+                        <p id="bilgi1"> İsim: <span id="demo1">  </span></p>
+                        <p id="bilgi2"> Boyut: <span id="demo2">  </span></p>
+                        <p id="bilgi3"> Tür: <span id="demo3">  </span></p>
+                        <p id="bilgi4"> Çözünürlük: <span id="demo4">  </span></p>
+                        <!--p id="bilgi5"> Tarih: <span id="demo5">  </span></p-->
+                </div>
+
+                <div id="a3">
+
+                
+                    
+ 
+                     <div id="a5" >
+                     
+                      <button id="homescreenbtn" >
+                         <img  src="/images/addhome.png" alt="Uygulama kısayolu" width="32" height="32"> Ana Ekrana Kaydet <br>
+                         
+ 
+                      </button>
+                                           
+                     </div>
+ 
+ 
+                 </div>
+                  
+      
+            </div>
+            
+            
+
+            
+            
+
+    </header>
+
+    <main id="temelyapi" >
+
+
+      
+        <img id="Resim1" src="#" alt="your image" hidden />
+          
+      
+
+      
+
+        <canvas id="kanvas" width="300" height="150"  ></canvas>
+        
+        
+      
+
+      
+        <canvas id="kanvas2" width="300" height="150"  ></canvas>
+
+        
+
+      
+          
+      
+
+    </main>
+
+
+    <div class="dialog-container" >
+            <div class="dialog">
+              <div class="dialog-title">Resim Ekle</div>
+              <!--div class="dialog-body">
+                  <input type='file' id="imgInput" />
+                  
+              </div-->
+
+              <div class="box">
+                <input type="file" name="file-3[]" id="imgInput" class="inputfile inputfile-3" />
+                <label for="imgInput"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span id="dizin1">Bir resim seçin</span></label>
+              </div>
+
+              
+
+              <div class="dialog-buttons">
+                <button id="butAddResim" class="button"><span>Uygula </span></button>
+                <button id="butAddCancel" class="button"><span>İptal </span></button>
+                
+              </div>
+            </div>
+    </div>
+
+
+
+
+          
+    <footer>
+        
+
+
+
+   
+  
+  
+
+
+        
+     <p id="log"></p>
+    </footer>
+</body>
+
+
+
+
+
+<script src="app.js"></script>  
+
+</html>
